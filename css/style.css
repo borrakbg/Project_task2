@@ -1,7 +1,86 @@
+header {
+	position: relative;
+	background-color: black;
+	height: 25vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+}
+
+header video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 0;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+	position: relative;
+	z-index: 2;
+}
+
+header .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+}
+
+hr.new4 {
+	border: 1px solid rgba(0,0,0,0.54);
+}
+
 .hide{
 	display: none;
 }
 .bold{
 	font-weight: bold;
 	font-size: 20px;
+}
+
+input[type=text], select {
+	width: 25%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 30%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+
+@media (pointer: coarse) and (hover: none) {
+	header {
+		background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+	}
+	header video {
+		display: none;
+	}
 }

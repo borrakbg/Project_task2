@@ -1,6 +1,8 @@
 <?php 
 include 'include/header.php';
 
-$roadMap = $_SESSION['roadMap'];
+$roadMap = $_SESSION['roadLength'];
+
+
 
 var_dump($roadMap);
