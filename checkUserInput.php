@@ -30,7 +30,7 @@ for ($j = 1; $j <= $length; $j++) {
     $roadMapArray[$j] = explode(", ", $lengthLight[$j]);
 }
 if ($errorCheck == false) {
-    $_SESSION['roadLength'] = $lengthLight;
+    $_SESSION['roadLength'] = $roadMapArray;
     header("Location: roadMapCalc.php");
 }
 

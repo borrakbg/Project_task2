@@ -12,22 +12,24 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body class="p-3 mb-2 bg-secondary text-dark">
-<header>
+<header class="border border-light rounded">
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="http://gnezdoto.vratsasoftware.com/media/bg.mp4" type="video/mp4">
+        <source src="include/video.mp4" type="video/mp4">
     </video>
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-                <h1 class="display-3">TrafficLights1D</h1>
-                <p class="lead mb-0">PHP Project task 2 2019</p>
+                <h1 class="display-1 font-weight-bolder">TrafficLights1D</h1>
+                <p class="lead mb-2 font-weight-bold">PHP Project task 2 2019</p>
             </div>
         </div>
     </div>
 </header>
-<hr class="new4" />
-<div class="jumbotron jumbotron-fluid">
+<div class="navbar">
+    <a class="" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
+</div>
+<div class="jumbotron jumbotron-fluid rounded">
     <div class="container text-center">
 
 
