@@ -10,8 +10,8 @@ $meters = 0;
 
 for($i = 1; $i <= count($roadMap); $i++){
     $seconds =$seconds + $roadMap[$i][0] - $meters;
-    $meters = (int)$roadMap[$i][0];
-    $redLight = (int)$roadMap[$i][1];
+    $meters = $roadMap[$i][0];
+    $redLight = $roadMap[$i][1];
 
 	if (($seconds/$redLight) % 2 != 0){
         $seconds = (int)($seconds/$redLight + 1)* $redLight;

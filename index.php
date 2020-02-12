@@ -1,5 +1,5 @@
 <?php
-include 'include/header.php';
+include 'include'.DIRECTORY_SEPARATOR.'header.php';
 ?>
     <form action="" method="post" id="rows_needed">
         <p class="bold">Задайте колко сфетофара Ви трябват:</p> <input type="text" name="countLight" placeholder="Брой Сфетофара"><br />
@@ -28,5 +28,5 @@ if (!empty($_POST['countLight'])) {
     <input class="hide" type="submit" name="sendLight" value="Пресметни">
     </form>
 <?php
-include 'include/footer.php';
+include 'include'.DIRECTORY_SEPARATOR.'footer.php';
 ?>
