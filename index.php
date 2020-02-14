@@ -17,11 +17,11 @@ if (!empty($_POST['countLight'])) {
     <p class="bold">Моля спазвайте следния синтакс: <span class="bold">12, 22</span></p>
     <?php
     for ($i = 1; $i <= $countLight;) {
-        echo "<p class='bold'>Моля въвдете данните за сфетофар " . $i . ": <input type='text' name='lengthLight[$i]' placeholder='example   24, 7'></p>";
+        echo "<p class='bold'>Моля въвдете данните за сфетофар " . $i . ": <input type='text' name='lengthLight[$i]' placeholder='example   10, 7'></p>";
         $i++;
     }
 } elseif (!empty($_POST['addCount']) && empty($_POST['countLight'])) {
-    echo "Please enter a valid input";
+    echo "<p class='bold'>Невалидни дани!!!<br />Моля въведете броя сфетофари!!!<p>";
 }
 ?>
 
