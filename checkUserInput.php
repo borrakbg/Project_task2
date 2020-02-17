@@ -1,6 +1,6 @@
 <?php
 
-include 'include/header.php';
+include "include" . DIRECTORY_SEPARATOR . "header.php";
 if (!empty($_POST['lengthLight'])) {
     $lengthLight = $_POST['lengthLight'];
 } else {
@@ -9,61 +9,31 @@ if (!empty($_POST['lengthLight'])) {
     exit;
 }
 
+$errorCheck = false;
 
-$lengthLightImpload = null;
-$lengthLightExpload = [];
-$errorCheck = null;
 
-$lengthLightImpload = implode(', ', $lengthLight);
-$lengthLightExpload = explode(', ', $lengthLightImpload);
-for ($i = 1; $i < count($lengthLightExpload);) {
+// Make POST array to string
+$lengthLightImpload = implode(", ", $lengthLight);
+
+//Make tring to array
+$lengthLightExpload = explode(", ", $lengthLightImpload);
+
+for ($i = 0; $i < count($lengthLightExpload); $i++) {
+    //var_dump($lengthLightExpload[$i]);
     if (!is_numeric($lengthLightExpload[$i])) {
         $errorCheck = true;
-        echo "<p class='bold'>Невалидни дани!!!<br />Моля използвайте само числа!!!<br />Спазвайте синтакса!!!<p>";
-        break;
-    }
-    $i++;
-}
-$length = count($lengthLight);
-$roadMapArray = [];
-
-
-for ($j = 1; $j <= $length; $j++) {
-    $roadMapArray[$j] = explode(", ", $lengthLight[$j]);
-}
-
-
-for ($k = 1; $k < count($roadMapArray); $k++) {
-    for ($m = 0; $m < count($roadMapArray[$k]); $m++) {
-        if (count($roadMapArray[$k]) != 2 && is_numeric($roadMapArray[$m][isset($k)])) {
-            $errorCheck = true;
-            echo "<p class='bold'>Невалидни дани!!!<br />Моля използвайте само числа!!!<p>";
-            break;
-        } else {
-            $nextRules = 0;
-            for ($n = 0; $n < count($roadMapArray); $n++) {
-                if ($roadMapArray[$nextRules][0] > $roadMapArray[$nextRules + 1][0]) {
-                    echo "<p class='bold'>Невалидни дани!!!<br />Няма как за толкова малко време да минете няколко сфетофара!!!<p>";
-                    $errorCheck = true;
-                    break;
-                }
-                if ($nextRules+1 == count($roadMapArray)) {
-                    echo "<p class='bold'>Невалидни дани!!!<br />Неможе да използвате три параметъра или един!!!<p>";
-                    $errorCheck = true;
-                    break;
-                } else {
-                    $nextRules++;
-                }
-            }
-        }
+        echo "<p class='bold'>Моля използвайте само числа!!!!<p>";
+        header("Refresh: 1; url=index.php");
+        exit;
     }
 }
-
 if ($errorCheck == false) {
-    $_SESSION['roadLength'] = $roadMapArray;
-    header("Location: roadMapCalc.php");
+    $_SESSION['roadLength'] = $lengthLightExpload;
+    header("Location:roadMapCalc.php");
 } else {
     echo "<hr /><p class='bold'>Моля попълнете данните си отново <br /><a href='index.php'>Начало</a><p>";
 }
 
-include 'include/footer.php';
+
+
+include "include" . DIRECTORY_SEPARATOR . "footer.php";
